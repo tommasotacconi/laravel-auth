@@ -25,10 +25,11 @@ class ProjectSeeder extends Seeder
     {
         // Function to create fake projects
         for ($i = 0; $i < 10; $i++) {
-            $new_project = new Project;
+            @dump($i);
+            $new_project = new Project();
             $new_project->name = $faker->name();
             $new_project->authors = '';
-            for ($i = 0; $i < 5; $i++) {
+            for ($j = 0; $j< 5; $j++) {
                 $new_project->authors .= " $faker->name()";
             };
             $new_project->arguments = $faker->text();

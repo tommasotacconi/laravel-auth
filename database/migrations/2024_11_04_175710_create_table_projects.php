@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
+            $table->string('name', 50);
             $table->string('authors', 255);
             $table->tinyText('arguments');
             $table->string('programming_languages', 150);
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_projects');
+        Schema::dropIfExists('projects');
     }
 };
