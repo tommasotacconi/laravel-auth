@@ -30,11 +30,16 @@ class ProjectController extends Controller
     }
 
     public function edit(string $id) {
-        return view('admin.projects.edit', compact('id'));
+        $editing_project = Project::findOrFail($id);
+
+        return view('admin.projects.edit', compact('editing_project'));
     }
 
-    public function update() {
-
+    public function update(Request $request, string $id) {
+        $edited_project_data = $request->all();
+        $editing_project = Project::findOrFail($id);
+        $editing_project->update($edited_project_data);
+        return redirect()->route('admin.projects.show', ['id' => $editing_project->id]);
     }
 
     public function delete() {
