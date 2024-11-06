@@ -14,21 +14,24 @@ class ProjectController extends Controller
     }
 
     public function show(string $id) {
-
+        $project = Project::findOrFail($id);
+        return view('admin.projects.show', compact('project'));
     }
 
     public function create() {
-
+        return view('admin.projects.create');
     }
 
-    public function store(string $id) {
+    public function store(Request $request) {
+        $new_project = Project::create($request->all());
+
+        return redirect()->route('admin.projects.show', ['id' => $new_project->id]);
 
     }
 
     public function edit(string $id) {
-
+        return view('admin.projects.edit', compact('id'));
     }
-
 
     public function update() {
 
