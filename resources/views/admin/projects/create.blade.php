@@ -7,11 +7,11 @@
     <form action="{{ route('admin.projects.store') }}" method="POST" class="col-md-8 mx-auto row gy-3">
       @csrf
 
-      <div class="col-12">
+      <div class="col-lg-6">
         <label for="input-name" class="form-label">Nome del progetto</label>
         <input type="text" class="form-control" id="input-name" name="name">
       </div>
-      <div class="col-12">
+      <div class="col-lg-6">
         <label for="input-authors" class="form-label">Autori</label>
         <input type="text" class="form-control" id="input-authors" name="authors">
       </div>
