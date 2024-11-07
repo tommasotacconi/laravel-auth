@@ -24,14 +24,12 @@ class ProjectController extends Controller
 
     public function store(Request $request) {
         $new_project = Project::create($request->all());
-
         return redirect()->route('admin.projects.show', ['id' => $new_project->id]);
 
     }
 
     public function edit(string $id) {
         $editing_project = Project::findOrFail($id);
-
         return view('admin.projects.edit', compact('editing_project'));
     }
 
@@ -42,7 +40,9 @@ class ProjectController extends Controller
         return redirect()->route('admin.projects.show', ['id' => $editing_project->id]);
     }
 
-    public function delete() {
-
+    public function destroy(string $id) {
+        $deleting_project = Project::findOrFail($id);
+        $deleting_project->delete();
+        return redirect()->route('admin.projects.index');
     }
 }

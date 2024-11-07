@@ -29,7 +29,7 @@
                 <td class="buttons-col">
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary btn-sm">Mostra</a>
                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-success btn-sm">Modifica</a>
-                    <form action="{{ route('admin.projects.delete', $project->id) }}" method="POST" custom-data-name="{{ $project->name }}" class="d-inline">
+                    <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" custom-data-name="{{ $project->name }}" class="d-inline">
                         @csrf
                         @method('DELETE')
 
