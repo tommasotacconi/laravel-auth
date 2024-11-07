@@ -20,15 +20,17 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('admin.projects.index') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <div class="wrapper-left-nav">
+                    <a class="navbar-brand" href="{{ route('admin.projects.index') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                    <a href="{{ route('admin.projects.create') }}">
+                        <i class="fa-solid fa-plus fa-xl"></i>
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="{{ route('admin.projects.create') }}">
-                    <i class="fa-solid fa-plus"></i>
-                </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
