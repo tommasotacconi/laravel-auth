@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-	<h1 class="ms-1">Admin/index</h1>
-
 	<h1 class="text-center p-3">
 		{{ $project->name }}
     </h1>

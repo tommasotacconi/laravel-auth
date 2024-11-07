@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1 class="ms-1">Admin/index</h1>
+  <h1 class="ms-1">Edit {{ $editing_project->name }}</h1>
 
   <div class="container-md">
     <form action="{{ route('admin.projects.update', $editing_project->id ) }}" method="POST" class="col-md-8 mx-auto row gy-3">
